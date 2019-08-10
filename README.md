@@ -8,6 +8,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     - [ ] About
     - [ ] Partial Projects
 - [ ] Fix Navigation Bar to change display on scroll.
+- [ ] Apply DRY to styles with shared styles.
 - [ ] Write tests to pass existing work: Home and About.
 - [ ] Code out Projects interactions without content.
 - [ ] Code out Projects content.
@@ -20,10 +21,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [ ] Install automation: CI/CD, include tags here for build/tests pass/fail.
 - [ ] Hook up analytics.
 - [ ] Make LIVE!- and update resumes, social medias!
+- [ ] Add fancy animation things.
 
 ## Wireframes
 ![Original Landing Page Wireframe 2018](https://raw.githubusercontent.com/cheriejw/cheriejw.github.io/master/landingpage.jpg)
 ![Projects Interactions](https://raw.githubusercontent.com/cheriejw/cheriejw.github.io/master/subjectproj.jpg)
+
+## Jumping Back to Angular:
+[Template Expressions](https://angular.io/guide/template-syntax)
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 

@@ -1,0 +1,36 @@
+#about {
+  box-shadow: 0 -2px 7px rgba(0,0,0,0.1), 0 -1px 5px rgba(0,0,0,0.2);
+
+  h3 {
+    background-color: rgba(224,192,105,1);
+    color: rgba(255,255,255,0.9);
+    text-align: center;
+    padding: 20px;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .avatar {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      display: inline-block;
+      background-image: url(/assets/img/face.jpg);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding: 0;
+    }
+
+    .blurb {
+      width: 620px;
+      padding: 0 15px;
+      font-size: 20px;
+      text-align: left;
+      font-weight: 400;
+    }
+  }
+}
