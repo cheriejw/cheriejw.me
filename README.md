@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Milestones
 - [ ] Port over existing work from Jekyll.
-    - [ ] Home
+    - [x] Home
     - [ ] About
     - [ ] Partial Projects
 - [ ] Write tests to pass existing work: Home and About.
