@@ -13,10 +13,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [ ] Write test for Projects.
 - [ ] Clean up Contacts to match wireframe.
 - [ ] Write test for Contacts.
+- [ ] Take care of vulnerabilities.
 - [ ] Ensure/implement accessibility/internationalization.
 - [ ] Test reactiveness.
 - [ ] Install automation: CI/CD, include tags here for build/tests pass/fail.
 - [ ] Hook up analytics.
+- [ ] Make LIVE!- and update resumes, social medias!
 
 ## Development server
 
