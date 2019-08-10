@@ -1,4 +1,15 @@
-.home-component {
-  text-align: center;
-  width: 100%;
+header {
+  height: 600px;
+  background-color: rgba(131,70,70,1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .emblem {
+    width: 390px;
+    height: 390px;
+    display: block;
+    margin: 60px auto;
+    opacity: .38;
+  }
 }
