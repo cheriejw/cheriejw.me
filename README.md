@@ -21,7 +21,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [ ] Install automation: CI/CD, include tags here for build/tests pass/fail.
 - [ ] Hook up analytics.
 - [ ] Make LIVE!- and update resumes, social medias!
-- [ ] Add fancy animation things.
+- [ ] Add fancy animation things, fix refreshing the anchor.
+    - [ ] https://stackoverflow.com/questions/44441089/angular4-scrolling-to-anchor
 
 ## Wireframes
 ![Original Landing Page Wireframe 2018](https://raw.githubusercontent.com/cheriejw/cheriejw.github.io/master/landingpage.jpg)
