@@ -1,0 +1,44 @@
+$project-height: 600px;
+
+#projects {
+  box-shadow: 0 -2px 7px rgba(0,0,0,0.1), 0 -1px 5px rgba(0,0,0,0.2);
+
+  h3 {
+    background-color: rgba(123,179,168,1);
+    color: rgba(255,255,255,0.9);
+    text-align: center;
+    padding: 20px;
+    overflow-x: hidden; //no-sideway scroll.
+  }
+
+  #project-main-menu {
+    #left-trapezoid {
+      border-bottom: 100px solid red;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      height: 0;
+      width: 100px;
+    }
+    #right-trapezoid {
+      border-bottom: 100px solid red;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      height: 0;
+      width: 100px;
+    }
+    #bottom-rectangle {
+      &:hover {
+        background-color: grey;
+      }
+      padding: 30px 0 30px 0;
+      border-top: 15px solid white;
+      background-color: pink;
+      height: 250px;
+
+      h2 {
+        font-size: 30px;
+        margin: 0 10px 10px 10px;
+      }
+    }
+  }
+}
