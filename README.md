@@ -54,3 +54,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 This is a pain point. The are serveral ways to make the shapes. Explored:
 - Images with `<area>`
 - Absolute
+
+## Z-INDEXES:
+1 - Project's Divider: `src/app/projects > id="divider"`
+2 - Project's Right Trapezoid: `src/app/projects > id="right-trapezoid"`
+5 - NavBar: `src/app/nav > div`
