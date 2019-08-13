@@ -1,4 +1,7 @@
 $project-height: 600px;
+$project-divider-width: 15px;
+$project-divider-color: white;
+$url: url("https://www.thehindu.com/opinion/op-ed/article22695424.ece/ALTERNATES/FREE_460/9thscience");
 
 #projects {
   box-shadow: 0 -2px 7px rgba(0,0,0,0.1), 0 -1px 5px rgba(0,0,0,0.2);
@@ -12,26 +15,71 @@ $project-height: 600px;
   }
 
   #project-main-menu {
-    #left-trapezoid {
-      border-bottom: 100px solid red;
-      border-left: 50px solid transparent;
-      border-right: 50px solid transparent;
-      height: 0;
-      width: 100px;
-    }
-    #right-trapezoid {
-      border-bottom: 100px solid red;
-      border-left: 50px solid transparent;
-      border-right: 50px solid transparent;
-      height: 0;
-      width: 100px;
+    div {
+      display: flex;
+      position: relative;
+      justify-content: space-between;
+      #left-trapezoid {
+        &:hover {
+          background: /* top, transparent red, faked with gradient */ 
+          linear-gradient(
+            rgba(0, 0, 0, 0.45), 
+            rgba(0, 0, 0, 0.45)
+          ), $url;
+        }
+        display: inline-block;
+        background: $url;
+        width: 100%;
+        height: 600px;
+        position: relative;
+        h2 {
+          font-size: 30px;
+          margin-top: 30px;
+        }
+      }
+      #divider {
+        width: 54%;
+        height: 600px;
+        position: absolute;
+        background-color: $project-divider-color;
+        z-index: 1;
+        top: 0;
+        right: $project-divider-width;
+        // Clip clickable path
+        -webkit-clip-path: polygon(0 0, 20% 600px, 100% 600px, 100% 0);
+        clip-path: polygon(0 0, 20% 600px, 100% 600px, 100% 0);
+      }
+      #right-trapezoid {
+        &:hover {
+          background: /* top, transparent red, faked with gradient */ 
+          linear-gradient(
+            rgba(0, 0, 0, 0.45), 
+            rgba(0, 0, 0, 0.45)
+          ), $url;
+        }
+        width: 54%;
+        height: 600px;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        background-image: $url;
+        display: inline-block;
+        // Clip clickable path
+        -webkit-clip-path: polygon(0 0, 20% 600px, 100% 600px, 100% 0);
+        clip-path: polygon(0 0, 20% 600px, 100% 600px, 100% 0);
+        text-align: right;
+        h2 {
+          margin-bottom: 30px
+        }
+      }
     }
     #bottom-rectangle {
       &:hover {
         background-color: grey;
       }
       padding: 30px 0 30px 0;
-      border-top: 15px solid white;
+      border-top: $project-divider-width solid $project-divider-color;
       background-color: pink;
       height: 250px;
 

@@ -1,17 +1,22 @@
 <section id="projects">
   <h3>PROJECTS</h3>
   <div id="project-main-menu">
-    <!-- Left Trapezoid -->
-    <div id="left-trapezoid">
-
-    </div>
-    <!-- Right Trapezoid -->
-    <div id="right-trapezoid">
-
+    <div>
+      <!-- Left Trapezoid -->
+      <div id="left-trapezoid">
+        <h2>{{ projectSubjects[0].title | uppercase }}</h2>
+        <app-link-list [list]="projectSubjects[0].projectList"></app-link-list>
+      </div>
+      <div id="divider"></div>
+      <!-- Right Trapezoid -->
+      <div id="right-trapezoid">
+        <h2>{{ projectSubjects[1].title | uppercase }}</h2>
+        <app-link-list [list]="projectSubjects[1].projectList"></app-link-list>
+      </div>
     </div>
     <!-- Bottom Reactangle -->
     <div id="bottom-rectangle">
-      <h2>RECREATIONAL</h2>
+      <h2>{{ projectSubjects[2].title | uppercase }}</h2>
       <app-link-list [list]="projectSubjects[2].projectList"></app-link-list>
     </div>
   </div>

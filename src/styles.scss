@@ -33,11 +33,7 @@ h3 {
 /*Each component is a section.*/
 $section-spacing: 2.8em;
 
-section {
-  padding: 0 0 $section-spacing;
-}
-
 .contained-section {
   width: 1000px;
-  margin: $section-spacing auto 0 auto;
+  margin: 0 auto 0 auto;
 }
