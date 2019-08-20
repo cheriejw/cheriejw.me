@@ -11,6 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { SelectedSubscreenComponent } from './projects/selected-subscreen/selected-subscreen.component';
 import { LinkListComponent } from './projects/link-list/link-list.component';
+import { ProjectMenuComponent } from './projects/project-menu/project-menu.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LinkListComponent } from './projects/link-list/link-list.component';
     ContactComponent,
     HomeComponent,
     SelectedSubscreenComponent,
-    LinkListComponent
+    LinkListComponent,
+    ProjectMenuComponent
   ],
   imports: [
     BrowserModule,
