@@ -32,6 +32,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Jumping Back to Angular:
 [Template Expressions](https://angular.io/guide/template-syntax)
 
+## Documentation
+[Compodoc / Documentation Tags]{https://compodoc.app/guides/jsdoc-tags.html}
+
+To run an update on the documentation and sticker:
+```
+npm run doc
+```
+
+To see documentation site locally, navigate to `<PATH_TO_CLONED_DIR>/cheriejw/documentation/coverage.html` in a web browser.
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
