@@ -69,4 +69,5 @@ This is a pain point. The are serveral ways to make the shapes. Explored:
 ## Z-INDEXES:
 1 - Project's Divider: `src/app/projects > id="divider"`
 2 - Project's Right Trapezoid: `src/app/projects > id="right-trapezoid"`
+4 - Project's SubScreen: `src/app/projects/`
 5 - NavBar: `src/app/nav > div`

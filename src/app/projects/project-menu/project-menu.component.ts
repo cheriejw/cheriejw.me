@@ -14,11 +14,14 @@ import { ProjectSubject } from '../projects.component.model';
 })
 export class ProjectMenuComponent implements OnInit {
 
-  @Input() project: ProjectSubject;
+  @Input() projectSubject: ProjectSubject;
+  @Input() onListItemClick: Function;
+  @Input() index: Number;
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.projectSubject)
   }
 
 }

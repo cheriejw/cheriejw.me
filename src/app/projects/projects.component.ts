@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectSubject } from './projects.component.model';
+import { includes } from 'ramda';
 
 @Component({
   selector: 'app-projects',
@@ -10,28 +11,26 @@ import { ProjectSubject } from './projects.component.model';
  * @summary Displays exactly 3 project subjects and drills down.
  */
 export class ProjectsComponent implements OnInit {
+  onCloseSubScreen: Function;
+  onListItemClick: Function;
   projectSubjects: ProjectSubject[];
+  selectedItemID: String;
 
   constructor() {
+    this.selectedItemID = '';
     this.projectSubjects = [
-      { // SOFTWARE
-        title: 'Software',
-        projectList: [
-          {title: 'Web Applications', imageURL: 'assets/img/face.jpg'}
-        ]
-      }, { // ART&DESIGN
-        title: 'Art&Design',
-        projectList: [
-          {title: 'Wireframes', imageURL: ''}
-        ]
-      }, { // RECREATIONAL
-        title: 'Recreational',
-        projectList: [
-          {title: 'Twitch Streams', imageURL: ''},
-          {title: 'Raspberry Pi Projects', imageURL: ''}
-        ]
-      }
+      require('app/projects/project-data/0/subject-info.json'),
+      require('app/projects/project-data/1/subject-info.json'),
+      require('app/projects/project-data/2/subject-info.json')
     ];
+    this.onListItemClick = (id) => {
+      // if (includes(this.selectedItemID, this.SUBJECT_IDS) || this.selectedItemID.length === 0) {
+      this.selectedItemID = id;
+      console.log('HELLO ' + this.selectedItemID);
+    };
+    this.onCloseSubScreen = () => {
+      this.selectedItemID = '';
+    };
   }
 
   ngOnInit() {

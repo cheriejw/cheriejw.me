@@ -1,0 +1,10 @@
+#project-menu {
+  ul {
+    margin: 0;
+    li {
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+}

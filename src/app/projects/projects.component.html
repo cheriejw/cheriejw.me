@@ -1,24 +1,26 @@
 <section id="projects">
   <h3>PROJECTS</h3>
   <div id="project-main-menu">
+    <!-- Menu Slide -->
     <div>
-      <!-- Left Trapezoid -->
-      <div id="left-trapezoid">
-        <h2>{{ projectSubjects[0].title | uppercase }}</h2>
-        <app-link-list [list]="projectSubjects[0].projectList"></app-link-list>
+      <div>
+        <!-- Left Trapezoid -->
+        <div id="left-trapezoid" (click)="onListItemClick('0')">
+          <app-project-menu index="0" [onListItemClick]="onListItemClick" [projectSubject]="projectSubjects[0]"></app-project-menu>
+        </div>
+        <div id="divider"></div>
+        <!-- Right Trapezoid -->
+        <div id="right-trapezoid" (click)="onListItemClick('1')">
+          <app-project-menu index="1" [onListItemClick]="onListItemClick" [projectSubject]="projectSubjects[1]"></app-project-menu>
+        </div>
       </div>
-      <div id="divider"></div>
-      <!-- Right Trapezoid -->
-      <div id="right-trapezoid">
-        <h2>{{ projectSubjects[1].title | uppercase }}</h2>
-        <app-link-list [list]="projectSubjects[1].projectList"></app-link-list>
+      <!-- Bottom Reactangle -->
+      <div id="bottom-rectangle" (click)="onListItemClick('2')">
+        <app-project-menu index="2" [onListItemClick]="onListItemClick" [projectSubject]="projectSubjects[2]"></app-project-menu>
       </div>
     </div>
-    <!-- Bottom Reactangle -->
-    <div id="bottom-rectangle">
-      <h2>{{ projectSubjects[2].title | uppercase }}</h2>
-      <app-link-list [list]="projectSubjects[2].projectList"></app-link-list>
-    </div>
+    <!-- Sub-menu Slide -->
+    <app-selected-subscreen [(selectedItemID)]="selectedItemID" *ngIf="selectedItemID.length > 0" [onCloseSubScreen]="onCloseSubScreen"></app-selected-subscreen>    
   </div>
 </section>
 <router-outlet></router-outlet>
