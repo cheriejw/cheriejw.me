@@ -1,4 +1,5 @@
 $project-height: 600px;
+$bottom-rectangle-height: 250px;
 $project-divider-width: 15px;
 $project-divider-color: white;
 $url: url("https://www.thehindu.com/opinion/op-ed/article22695424.ece/ALTERNATES/FREE_460/9thscience");
@@ -33,7 +34,7 @@ $url: url("https://www.thehindu.com/opinion/op-ed/article22695424.ece/ALTERNATES
           display: inline-block;
           background: $url;
           width: 100%;
-          height: 600px;
+          height: $project-height;
           position: relative;
           h2 {
             font-size: 30px;
@@ -42,7 +43,7 @@ $url: url("https://www.thehindu.com/opinion/op-ed/article22695424.ece/ALTERNATES
         }
         #divider {
           width: 54%;
-          height: 600px;
+          height: $project-height;
           position: absolute;
           background-color: $project-divider-color;
           z-index: 1;
@@ -61,7 +62,7 @@ $url: url("https://www.thehindu.com/opinion/op-ed/article22695424.ece/ALTERNATES
             ), $url;
           }
           width: 54%;
-          height: 600px;
+          height: $project-height;
           position: absolute;
           z-index: 2;
           top: 0;
@@ -89,7 +90,7 @@ $url: url("https://www.thehindu.com/opinion/op-ed/article22695424.ece/ALTERNATES
         padding: 30px 0 30px 0;
         border-top: $project-divider-width solid $project-divider-color;
         background-image: $url;
-        height: 250px;
+        height: $bottom-rectangle-height;
   
         h2 {
           font-size: 30px;

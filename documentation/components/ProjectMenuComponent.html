@@ -86,9 +86,6 @@ this component will just render the projectList.</p>
         <h3>Example</h3>
     </p>
     <div class="io-description">
-                <div>
-                    <pre class="line-numbers"><code class="language-html">&lt;app-project-menu [project]=&quot;test&quot;&gt;&lt;/app-project-menu&gt;</code></pre>
-                </div>
     </div>
 
 <section>
@@ -163,7 +160,13 @@ this component will just render the projectList.</p>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#project">project</a>
+                                <a href="#index">index</a>
+                            </li>
+                            <li>
+                                <a href="#onListItemClick">onListItemClick</a>
+                            </li>
+                            <li>
+                                <a href="#projectSubject">projectSubject</a>
                             </li>
                         </ul>
                     </td>
@@ -187,7 +190,7 @@ this component will just render the projectList.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/projects/project-menu/project-menu.component.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/projects/project-menu/project-menu.component.ts:27</a></div>
                             </td>
                         </tr>
 
@@ -201,8 +204,50 @@ this component will just render the projectList.</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="project"></a>
-                        <b>project</b>
+                        <a name="index"></a>
+                        <b>index</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank" >Number</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/projects/project-menu/project-menu.component.ts:27</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onListItemClick"></a>
+                        <b>onListItemClick</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" >Function</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/projects/project-menu/project-menu.component.ts:26</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="projectSubject"></a>
+                        <b>projectSubject</b>
                     </td>
                 </tr>
                 <tr>
@@ -213,7 +258,7 @@ this component will just render the projectList.</p>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/projects/project-menu/project-menu.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/projects/project-menu/project-menu.component.ts:25</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -249,8 +294,8 @@ this component will just render the projectList.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/app/projects/project-menu/project-menu.component.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/projects/project-menu/project-menu.component.ts:33</a></div>
                 </td>
             </tr>
 
@@ -281,8 +326,13 @@ import { ProjectSubject } from &#x27;../projects.component.model&#x27;;
  * If the provided {@link ProjectSubject} does not contain a title that is of greater than 0 length,
  * this component will just render the projectList.
  *
- * @example
- * &lt;app-project-menu [project]&#x3D;&quot;test&quot;&gt;&lt;/app-project-menu&gt;
+ * @param projectSubject Required field. Used to populate the list.
+ * @param onListItemClick Optional field. Executes this function on any list item click and sends index
+ *   as first parameter, with specific project&#x27;s id as second parameter. i.e.
+ *   &#x60;&lt;h4 (click)&#x3D;&quot;onListItemClick(index, project.id)&quot;&gt;{{project.title}}&lt;/h4&gt;&#x60;
+ *
+ * @param index Optional field. Initially used to determine which (of many) projectSubjects this menu
+ *   represents.
  */
 @Component({
   selector: &#x27;app-project-menu&#x27;,
@@ -291,11 +341,16 @@ import { ProjectSubject } from &#x27;../projects.component.model&#x27;;
 })
 export class ProjectMenuComponent implements OnInit {
 
-  @Input() project: ProjectSubject;
+  @Input() projectSubject: ProjectSubject;
+  @Input() onListItemClick: Function;
+  @Input() index: Number;
 
-  constructor() { }
+  constructor() {
+    this.onListItemClick &#x3D; () &#x3D;&gt; {};
+  }
 
   ngOnInit() {
+    console.log(this.projectSubject)
   }
 
 }
@@ -303,15 +358,30 @@ export class ProjectMenuComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;h2 *ngIf&#x3D;&quot;project.title.length &gt; 0&quot;&gt;{{ project.title | uppercase }}&lt;/h2&gt;
-&lt;app-link-list [list]&#x3D;&quot;projectSubjects[0].projectList&quot;&gt;&lt;/app-link-list&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;div id&#x3D;&quot;project-menu&quot;&gt;
+  &lt;h2 *ngIf&#x3D;&quot;projectSubject.title.length &gt; 0&quot;&gt;{{ projectSubject.title | uppercase }}&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li *ngFor&#x3D;&quot;let project of projectSubject.projectList&quot;&gt;
+      &lt;h4 (click)&#x3D;&quot;onListItemClick(index, project.id)&quot;&gt;{{project.title}}&lt;/h4&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
                     <code>./project-menu.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">#project-menu {
+  ul {
+    margin: 0;
+    li {
+      &amp;:hover {
+        font-weight: bold;
+      }
+    }
+  }
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -339,8 +409,8 @@ export class ProjectMenuComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><h2 *ngIf="project.title.length > 0">{{ project.title | uppercase }}</h2><app-link-list [list]="projectSubjects[0].projectList"></app-link-list></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LinkListComponent', 'selector': 'app-link-list'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'ProjectMenuComponent', 'selector': 'app-project-menu'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'SelectedSubscreenComponent', 'selector': 'app-selected-subscreen'}];
+        var COMPONENT_TEMPLATE = '<div><div id="project-menu">  <h2 *ngIf="projectSubject.title.length > 0">{{ projectSubject.title | uppercase }}</h2>  <ul>    <li *ngFor="let project of projectSubject.projectList">      <h4 (click)="onListItemClick(index, project.id)">{{project.title}}</h4>    </li>  </ul></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'ProjectMenuComponent', 'selector': 'app-project-menu'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'SelectedSubscreenComponent', 'selector': 'app-selected-subscreen'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ProjectMenuComponent'};
 </script>

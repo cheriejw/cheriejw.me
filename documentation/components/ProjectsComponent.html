@@ -130,7 +130,16 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#onCloseSubScreen">onCloseSubScreen</a>
+                            </li>
+                            <li>
+                                <a href="#onListItemClick">onListItemClick</a>
+                            </li>
+                            <li>
                                 <a href="#projectSubjects">projectSubjects</a>
+                            </li>
+                            <li>
+                                <a href="#selectedItemID">selectedItemID</a>
                             </li>
                         </ul>
                     </td>
@@ -170,7 +179,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/projects/projects.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/projects/projects.component.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -209,8 +218,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/app/projects/projects.component.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/projects/projects.component.ts:36</a></div>
                 </td>
             </tr>
 
@@ -236,6 +245,60 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="onCloseSubScreen"></a>
+                        <span class="name">
+                            <b>
+                            onCloseSubScreen</b>
+                            <a href="#onCloseSubScreen"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" >Function</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/projects/projects.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onListItemClick"></a>
+                        <span class="name">
+                            <b>
+                            onListItemClick</b>
+                            <a href="#onListItemClick"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" >Function</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/projects/projects.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="projectSubjects"></a>
                         <span class="name">
                             <b>
@@ -252,7 +315,34 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/projects/projects.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/projects/projects.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedItemID"></a>
+                        <span class="name">
+                            <b>
+                            selectedItemID</b>
+                            <a href="#selectedItemID"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/projects/projects.component.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -267,6 +357,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { ProjectSubject } from &#x27;./projects.component.model&#x27;;
+import { includes } from &#x27;ramda&#x27;;
 
 @Component({
   selector: &#x27;app-projects&#x27;,
@@ -277,28 +368,26 @@ import { ProjectSubject } from &#x27;./projects.component.model&#x27;;
  * @summary Displays exactly 3 project subjects and drills down.
  */
 export class ProjectsComponent implements OnInit {
+  onCloseSubScreen: Function;
+  onListItemClick: Function;
   projectSubjects: ProjectSubject[];
+  selectedItemID: String;
 
   constructor() {
+    this.selectedItemID &#x3D; &#x27;&#x27;;
     this.projectSubjects &#x3D; [
-      { // SOFTWARE
-        title: &#x27;Software&#x27;,
-        projectList: [
-          {title: &#x27;Web Applications&#x27;, imageURL: &#x27;assets/img/face.jpg&#x27;}
-        ]
-      }, { // ART&amp;DESIGN
-        title: &#x27;Art&amp;Design&#x27;,
-        projectList: [
-          {title: &#x27;Wireframes&#x27;, imageURL: &#x27;&#x27;}
-        ]
-      }, { // RECREATIONAL
-        title: &#x27;Recreational&#x27;,
-        projectList: [
-          {title: &#x27;Twitch Streams&#x27;, imageURL: &#x27;&#x27;},
-          {title: &#x27;Raspberry Pi Projects&#x27;, imageURL: &#x27;&#x27;}
-        ]
-      }
+      require(&#x27;app/projects/project-data/0/subject-info.json&#x27;),
+      require(&#x27;app/projects/project-data/1/subject-info.json&#x27;),
+      require(&#x27;app/projects/project-data/2/subject-info.json&#x27;)
     ];
+    this.onListItemClick &#x3D; (id) &#x3D;&gt; {
+      // if (includes(this.selectedItemID, this.SUBJECT_IDS) || this.selectedItemID.length &#x3D;&#x3D;&#x3D; 0) {
+      this.selectedItemID &#x3D; id;
+      console.log(&#x27;HELLO &#x27; + this.selectedItemID);
+    };
+    this.onCloseSubScreen &#x3D; () &#x3D;&gt; {
+      this.selectedItemID &#x3D; &#x27;&#x27;;
+    };
   }
 
   ngOnInit() {
@@ -312,24 +401,26 @@ export class ProjectsComponent implements OnInit {
         <pre class="line-numbers"><code class="language-html">&lt;section id&#x3D;&quot;projects&quot;&gt;
   &lt;h3&gt;PROJECTS&lt;/h3&gt;
   &lt;div id&#x3D;&quot;project-main-menu&quot;&gt;
+    &lt;!-- Menu Slide --&gt;
     &lt;div&gt;
-      &lt;!-- Left Trapezoid --&gt;
-      &lt;div id&#x3D;&quot;left-trapezoid&quot;&gt;
-        &lt;h2&gt;{{ projectSubjects[0].title | uppercase }}&lt;/h2&gt;
-        &lt;app-link-list [list]&#x3D;&quot;projectSubjects[0].projectList&quot;&gt;&lt;/app-link-list&gt;
+      &lt;div&gt;
+        &lt;!-- Left Trapezoid --&gt;
+        &lt;div id&#x3D;&quot;left-trapezoid&quot; (click)&#x3D;&quot;onListItemClick(&#x27;0&#x27;)&quot;&gt;
+          &lt;app-project-menu index&#x3D;&quot;0&quot; [onListItemClick]&#x3D;&quot;onListItemClick&quot; [projectSubject]&#x3D;&quot;projectSubjects[0]&quot;&gt;&lt;/app-project-menu&gt;
+        &lt;/div&gt;
+        &lt;div id&#x3D;&quot;divider&quot;&gt;&lt;/div&gt;
+        &lt;!-- Right Trapezoid --&gt;
+        &lt;div id&#x3D;&quot;right-trapezoid&quot; (click)&#x3D;&quot;onListItemClick(&#x27;1&#x27;)&quot;&gt;
+          &lt;app-project-menu index&#x3D;&quot;1&quot; [onListItemClick]&#x3D;&quot;onListItemClick&quot; [projectSubject]&#x3D;&quot;projectSubjects[1]&quot;&gt;&lt;/app-project-menu&gt;
+        &lt;/div&gt;
       &lt;/div&gt;
-      &lt;div id&#x3D;&quot;divider&quot;&gt;&lt;/div&gt;
-      &lt;!-- Right Trapezoid --&gt;
-      &lt;div id&#x3D;&quot;right-trapezoid&quot;&gt;
-        &lt;h2&gt;{{ projectSubjects[1].title | uppercase }}&lt;/h2&gt;
-        &lt;app-link-list [list]&#x3D;&quot;projectSubjects[1].projectList&quot;&gt;&lt;/app-link-list&gt;
+      &lt;!-- Bottom Reactangle --&gt;
+      &lt;div id&#x3D;&quot;bottom-rectangle&quot; (click)&#x3D;&quot;onListItemClick(&#x27;2&#x27;)&quot;&gt;
+        &lt;app-project-menu index&#x3D;&quot;2&quot; [onListItemClick]&#x3D;&quot;onListItemClick&quot; [projectSubject]&#x3D;&quot;projectSubjects[2]&quot;&gt;&lt;/app-project-menu&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-    &lt;!-- Bottom Reactangle --&gt;
-    &lt;div id&#x3D;&quot;bottom-rectangle&quot;&gt;
-      &lt;h2&gt;{{ projectSubjects[2].title | uppercase }}&lt;/h2&gt;
-      &lt;app-link-list [list]&#x3D;&quot;projectSubjects[2].projectList&quot;&gt;&lt;/app-link-list&gt;
-    &lt;/div&gt;
+    &lt;!-- Sub-menu Slide --&gt;
+    &lt;app-selected-subscreen [(selectedItemID)]&#x3D;&quot;selectedItemID&quot; *ngIf&#x3D;&quot;selectedItemID.length &gt; 0&quot; [onCloseSubScreen]&#x3D;&quot;onCloseSubScreen&quot;&gt;&lt;/app-selected-subscreen&gt;    
   &lt;/div&gt;
 &lt;/section&gt;
 &lt;router-outlet&gt;&lt;/router-outlet&gt;
@@ -341,6 +432,7 @@ export class ProjectsComponent implements OnInit {
                     <code>./projects.component.scss</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">$project-height: 600px;
+$bottom-rectangle-height: 250px;
 $project-divider-width: 15px;
 $project-divider-color: white;
 $url: url(&quot;https://www.thehindu.com/opinion/op-ed/article22695424.ece/ALTERNATES/FREE_460/9thscience&quot;);
@@ -357,78 +449,95 @@ $url: url(&quot;https://www.thehindu.com/opinion/op-ed/article22695424.ece/ALTER
   }
 
   #project-main-menu {
+    position: relative;
+
     div {
-      display: flex;
-      position: relative;
-      justify-content: space-between;
-      #left-trapezoid {
+      div {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        #left-trapezoid {
+          &amp;:hover {
+            background: /* top, transparent red, faked with gradient */ 
+            linear-gradient(
+              rgba(0, 0, 0, 0.45), 
+              rgba(0, 0, 0, 0.45)
+            ), $url;
+          }
+          display: inline-block;
+          background: $url;
+          width: 100%;
+          height: $project-height;
+          position: relative;
+          h2 {
+            font-size: 30px;
+            margin-top: 30px;
+          }
+        }
+        #divider {
+          width: 54%;
+          height: $project-height;
+          position: absolute;
+          background-color: $project-divider-color;
+          z-index: 1;
+          top: 0;
+          right: $project-divider-width;
+          // Clip clickable path
+          -webkit-clip-path: polygon(0 0, 20% 600px, 100% 600px, 100% 0);
+          clip-path: polygon(0 0, 20% 600px, 100% 600px, 100% 0);
+        }
+        #right-trapezoid {
+          &amp;:hover {
+            background: /* top, transparent red, faked with gradient */ 
+            linear-gradient(
+              rgba(0, 0, 0, 0.45), 
+              rgba(0, 0, 0, 0.45)
+            ), $url;
+          }
+          width: 54%;
+          height: $project-height;
+          position: absolute;
+          z-index: 2;
+          top: 0;
+          right: 0;
+          background-image: $url;
+          display: inline-block;
+          // Clip clickable path
+          -webkit-clip-path: polygon(0 0, 20% 600px, 100% 600px, 100% 0);
+          clip-path: polygon(0 0, 20% 600px, 100% 600px, 100% 0);
+          text-align: right;
+          h2 {
+            margin-bottom: 30px
+          }
+        }
+      }
+      
+      #bottom-rectangle {
         &amp;:hover {
           background: /* top, transparent red, faked with gradient */ 
-          linear-gradient(
-            rgba(0, 0, 0, 0.45), 
-            rgba(0, 0, 0, 0.45)
-          ), $url;
+            linear-gradient(
+              rgba(0, 0, 0, 0.45), 
+              rgba(0, 0, 0, 0.45)
+            ), $url;
         }
-        display: inline-block;
-        background: $url;
-        width: 100%;
-        height: 600px;
-        position: relative;
+        padding: 30px 0 30px 0;
+        border-top: $project-divider-width solid $project-divider-color;
+        background-image: $url;
+        height: $bottom-rectangle-height;
+  
         h2 {
           font-size: 30px;
-          margin-top: 30px;
-        }
-      }
-      #divider {
-        width: 54%;
-        height: 600px;
-        position: absolute;
-        background-color: $project-divider-color;
-        z-index: 1;
-        top: 0;
-        right: $project-divider-width;
-        // Clip clickable path
-        -webkit-clip-path: polygon(0 0, 20% 600px, 100% 600px, 100% 0);
-        clip-path: polygon(0 0, 20% 600px, 100% 600px, 100% 0);
-      }
-      #right-trapezoid {
-        &amp;:hover {
-          background: /* top, transparent red, faked with gradient */ 
-          linear-gradient(
-            rgba(0, 0, 0, 0.45), 
-            rgba(0, 0, 0, 0.45)
-          ), $url;
-        }
-        width: 54%;
-        height: 600px;
-        position: absolute;
-        z-index: 2;
-        top: 0;
-        right: 0;
-        background-image: $url;
-        display: inline-block;
-        // Clip clickable path
-        -webkit-clip-path: polygon(0 0, 20% 600px, 100% 600px, 100% 0);
-        clip-path: polygon(0 0, 20% 600px, 100% 600px, 100% 0);
-        text-align: right;
-        h2 {
-          margin-bottom: 30px
+          margin: 0 10px 10px 10px;
         }
       }
     }
-    #bottom-rectangle {
-      &amp;:hover {
-        background-color: grey;
-      }
-      padding: 30px 0 30px 0;
-      border-top: $project-divider-width solid $project-divider-color;
-      background-color: pink;
-      height: 250px;
 
-      h2 {
-        font-size: 30px;
-        margin: 0 10px 10px 10px;
-      }
+    app-selected-subscreen {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 4;
+      top: 0;
     }
   }
 }</code></pre>
@@ -459,8 +568,8 @@ $url: url(&quot;https://www.thehindu.com/opinion/op-ed/article22695424.ece/ALTER
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><section id="projects">  <h3>PROJECTS</h3>  <div id="project-main-menu">    <div>      <!-- Left Trapezoid -->      <div id="left-trapezoid">        <h2>{{ projectSubjects[0].title | uppercase }}</h2>        <app-link-list [list]="projectSubjects[0].projectList"></app-link-list>      </div>      <div id="divider"></div>      <!-- Right Trapezoid -->      <div id="right-trapezoid">        <h2>{{ projectSubjects[1].title | uppercase }}</h2>        <app-link-list [list]="projectSubjects[1].projectList"></app-link-list>      </div>    </div>    <!-- Bottom Reactangle -->    <div id="bottom-rectangle">      <h2>{{ projectSubjects[2].title | uppercase }}</h2>      <app-link-list [list]="projectSubjects[2].projectList"></app-link-list>    </div>  </div></section><router-outlet></router-outlet></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LinkListComponent', 'selector': 'app-link-list'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'ProjectMenuComponent', 'selector': 'app-project-menu'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'SelectedSubscreenComponent', 'selector': 'app-selected-subscreen'}];
+        var COMPONENT_TEMPLATE = '<div><section id="projects">  <h3>PROJECTS</h3>  <div id="project-main-menu">    <!-- Menu Slide -->    <div>      <div>        <!-- Left Trapezoid -->        <div id="left-trapezoid" (click)="onListItemClick(\'0\')">          <app-project-menu index="0" [onListItemClick]="onListItemClick" [projectSubject]="projectSubjects[0]"></app-project-menu>        </div>        <div id="divider"></div>        <!-- Right Trapezoid -->        <div id="right-trapezoid" (click)="onListItemClick(\'1\')">          <app-project-menu index="1" [onListItemClick]="onListItemClick" [projectSubject]="projectSubjects[1]"></app-project-menu>        </div>      </div>      <!-- Bottom Reactangle -->      <div id="bottom-rectangle" (click)="onListItemClick(\'2\')">        <app-project-menu index="2" [onListItemClick]="onListItemClick" [projectSubject]="projectSubjects[2]"></app-project-menu>      </div>    </div>    <!-- Sub-menu Slide -->    <app-selected-subscreen [(selectedItemID)]="selectedItemID" *ngIf="selectedItemID.length > 0" [onCloseSubScreen]="onCloseSubScreen"></app-selected-subscreen>      </div></section><router-outlet></router-outlet></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'ProjectMenuComponent', 'selector': 'app-project-menu'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'SelectedSubscreenComponent', 'selector': 'app-selected-subscreen'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ProjectsComponent'};
 </script>

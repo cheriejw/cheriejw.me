@@ -20,10 +20,8 @@ export class SelectedSubscreenComponent implements OnInit {
   ngOnInit() {
     this.projectSubject = require('app/projects/project-data/' + this.selectedItemID + '/subject-info.json');
     this.currentHTML = require('app/projects/project-data/' + this.selectedItemID + '/index.html');
-    this.onListItemClick = (id) => {
-      // if (includes(this.selectedItemID, this.SUBJECT_IDS) || this.selectedItemID.length === 0) {
-      // this.selectedItemID = id;
-      console.log('HELLO ' + id);
+    this.onListItemClick = (_, id) => {
+      this.currentHTML = require('app/projects/project-data/' + this.selectedItemID + '/' + id + '/index.html');
     };
   }
 
