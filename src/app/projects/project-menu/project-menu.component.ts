@@ -28,10 +28,10 @@ export class ProjectMenuComponent implements OnInit {
 
   constructor() {
     this.onListItemClick = () => {};
+    this.projectSubject = {title: '', projectList: []};
   }
 
   ngOnInit() {
-    console.log(this.projectSubject)
   }
 
 }

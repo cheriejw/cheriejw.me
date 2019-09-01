@@ -61,10 +61,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ## Journal
-#### Project Page
-This is a pain point. The are serveral ways to make the shapes. Explored:
-- Images with `<area>`
-- Absolute
+- `String` vs `string`. Kept `String` for consistency, though `string` is better where useable.
 
 ## Z-INDEXES:
 1 - Project's Divider: `src/app/projects > id="divider"`

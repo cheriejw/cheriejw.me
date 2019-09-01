@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectSubject } from './projects.component.model';
-import { includes } from 'ramda';
 
 @Component({
   selector: 'app-projects',

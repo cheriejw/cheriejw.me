@@ -8,7 +8,25 @@ $subject-navigation-height: 925px - $project-height;
   
   #subject-navigation {
     height: $subject-navigation-height;
-    background-color: rgba(0, 0, 0, 0.5)
+    background-color: rgba(0, 0, 0, 0.5);
+    
+    button {
+      color: transparent;
+      background-color: transparent;
+      border-color: transparent;
+      cursor: pointer;
+      &:hover {
+        font-weight: bold;
+      }
+    }
+
+    div {
+      display: flex;
+
+      #main-project-menu {
+        width: 30%;
+      }
+    }
   }
 
   #project-display {
@@ -16,5 +34,6 @@ $subject-navigation-height: 925px - $project-height;
     width: 100%;
     height: $project-height;
     margin: 0;
+    overflow: scroll;
   }
 }

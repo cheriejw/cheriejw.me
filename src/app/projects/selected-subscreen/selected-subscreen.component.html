@@ -1,7 +1,10 @@
 <div id="selected-subscreen">
   <div id="subject-navigation">
     <button (click)="onCloseSubScreen()">X</button>
-    <app-project-menu [onListItemClick]="onListItemClick" [projectSubject]="projectSubject"></app-project-menu>
+    <div>
+      <app-project-menu id="main-project-menu" [onListItemClick]="onListItemClickInitial" [projectSubject]="projectSubject"></app-project-menu>
+      <app-project-menu [onListItemClick]="onListItemClickFinal" [projectSubject]="subProjectSubject"></app-project-menu>
+    </div>
   </div>
   <div id="project-display" [innerHTML]="currentHTML"></div>
 </div>

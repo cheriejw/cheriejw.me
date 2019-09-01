@@ -1,8 +1,8 @@
 <div id="project-menu">
-  <h2 *ngIf="projectSubject.title.length > 0">{{ projectSubject.title | uppercase }}</h2>
-  <ul>
-    <li *ngFor="let project of projectSubject.projectList">
-      <h4 (click)="onListItemClick(index, project.id)">{{project.title}}</h4>
+  <h2 *ngIf="projectSubject && projectSubject.title.length > 0">{{ projectSubject.title | uppercase }}</h2>
+  <ul *ngIf="projectSubject">
+    <li *ngFor="let project of projectSubject.projectList" (click)="onListItemClick(index, project.id)">
+      {{project.title}}
     </li>
   </ul>
 </div>
