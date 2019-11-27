@@ -1,7 +1,6 @@
 $project-height: 600px;
 $bottom-rectangle-height: 250px;
 $project-divider-width: 15px;
-$project-list-padding: 20px;
 $project-divider-color: white;
 $url: url("https://www.thehindu.com/opinion/op-ed/article22695424.ece/ALTERNATES/FREE_460/9thscience");
 
@@ -26,14 +25,13 @@ $url: url("https://www.thehindu.com/opinion/op-ed/article22695424.ece/ALTERNATES
         justify-content: space-between;
         #left-trapezoid {
           &:hover {
-            background: /* top, transparent red, faked with gradient */ 
+            background: /* overlay faked with gradient */ 
             linear-gradient(
               rgba(0, 0, 0, 0.45), 
               rgba(0, 0, 0, 0.45)
             ), $url;
           }
           display: inline-block;
-          padding-left: $project-list-padding;
           background: $url;
           width: 100%;
           height: $project-height;
@@ -57,13 +55,12 @@ $url: url("https://www.thehindu.com/opinion/op-ed/article22695424.ece/ALTERNATES
         }
         #right-trapezoid {
           &:hover {
-            background: /* top, transparent red, faked with gradient */ 
+            background: /* overlay faked with gradient */ 
             linear-gradient(
               rgba(0, 0, 0, 0.45), 
               rgba(0, 0, 0, 0.45)
             ), $url;
           }
-          padding-right: $project-list-padding;
           width: 54%;
           height: $project-height;
           position: absolute;
@@ -81,7 +78,6 @@ $url: url("https://www.thehindu.com/opinion/op-ed/article22695424.ece/ALTERNATES
           }
         }
       }
-      
       #bottom-rectangle {
         &:hover {
           background: /* top, transparent red, faked with gradient */ 
@@ -90,11 +86,9 @@ $url: url("https://www.thehindu.com/opinion/op-ed/article22695424.ece/ALTERNATES
               rgba(0, 0, 0, 0.45)
             ), $url;
         }
-        padding: 30px $project-list-padding 30px 0;
         border-top: $project-divider-width solid $project-divider-color;
         background-image: $url;
         height: $bottom-rectangle-height;
-  
         h2 {
           font-size: 30px;
           margin: 0 10px 10px 10px;
