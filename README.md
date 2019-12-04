@@ -3,6 +3,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
 
+## Updating Website for Future Cherie
+- About
+  - In `app/about/about.component.ts`, I didn't find it necessary to absract this out in a seprate data-file.
+- Projects _(Sorry, its not very DRY but, could be worse.)_
+  - TO UPDATE THE CONTENT FROM SUBMENU OF PROJECT SECTION UI & ONWARD
+    - In `app/projects/project-data`, there is `0`, `1`, and `2`. These represent your 3 groups in the main menu of your project section of your website.
+    - In side each of these nondescript folders are `more nondescript folders`, an `index.html` file, and a `subject-info.json` file.
+    - The `subject-info.json` file is where (mildly) human-readable content is. The `id` in each `projectList` item corresponds to the `more nondescript folders` referenced earlier.
+    - The `more nondescript folders` (should) each have an `index.html` and a `subject-info.json` (sound familiar?)
+
 ## Milestones
 - [ ] Port over existing work from Jekyll.
     - [x] Home
@@ -62,7 +72,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## Journal
+## Perculiar Journal
 - `String` vs `string`. Kept `String` for consistency, though `string` is better where useable.
 
 ## Z-INDEXES:
@@ -70,3 +80,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 2 - Project's Right Trapezoid: `src/app/projects > id="right-trapezoid"`
 4 - Project's SubScreen: `src/app/projects/`
 5 - NavBar: `src/app/nav > div`
+
+## SPECIFIC USE HTML TAGS:
+`h6`: for all keywords in projects.
