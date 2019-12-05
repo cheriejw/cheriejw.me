@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectSubject } from './projects.component.model';
+import { ProjectSubject, Employer } from './projects.component.model';
 
 @Component({
   selector: 'app-projects',
@@ -14,6 +14,7 @@ export class ProjectsComponent implements OnInit {
   onListItemClick: Function;
   projectSubjects: ProjectSubject[];
   selectedItemID: String;
+  employersList: Employer[];
 
   constructor() {
     this.selectedItemID = '';
@@ -22,6 +23,7 @@ export class ProjectsComponent implements OnInit {
       require('app/projects/project-data/1/subject-info.json'),
       require('app/projects/project-data/2/subject-info.json')
     ];
+    this.employersList = require('app/projects/project-data/employers-list.json');
     this.onListItemClick = (id) => {
       // if (includes(this.selectedItemID, this.SUBJECT_IDS) || this.selectedItemID.length === 0) {
       this.selectedItemID = id;

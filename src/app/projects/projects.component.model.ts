@@ -14,3 +14,12 @@ export class Project {
   id: String;
   imageURL: String;
 }
+
+/**
+ * An Employer object.
+ */
+export class Employer {
+  employerName: String;
+  logoURL: String;
+  employerLink: String;
+}

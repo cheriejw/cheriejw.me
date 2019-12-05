@@ -82,4 +82,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 5 - NavBar: `src/app/nav > div`
 
 ## SPECIFIC USE HTML TAGS:
+`h3`: for all section headers.
 `h6`: for all keywords in projects.
