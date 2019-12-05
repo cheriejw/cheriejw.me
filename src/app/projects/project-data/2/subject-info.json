@@ -1,7 +1,8 @@
 {
   "title": "Other Recreational",
   "projectList": [
-    {"title": "Twitch Streams", "id": 2, "imageURL": ""},
-    {"title": "Raspberry Pi Projects", "id": 3, "imageURL": ""}
+    {"title": "Twitch Streams", "id": 0, "imageURL": ""},
+    {"title": "Raspberry Pi Projects", "id": 1, "imageURL": ""},
+    {"title": "Published Technical Posts", "id": 2, "imageURL": ""}
   ]
 }
