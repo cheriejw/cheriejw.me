@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SelectedSubscreenComponent } from './projects/selected-subscreen/selected-subscreen.component';
 import { ProjectMenuComponent } from './projects/project-menu/project-menu.component';
+import { FooterComponent } from './footer/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProjectMenuComponent } from './projects/project-menu/project-menu.compo
     ContactComponent,
     HomeComponent,
     SelectedSubscreenComponent,
-    ProjectMenuComponent
+    ProjectMenuComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
