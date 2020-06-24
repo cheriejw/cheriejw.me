@@ -1,10 +1,23 @@
+// Specific for this component for Cherie's website.
+$project-list-horizontal-padding: 20px;
+$project-list-vertical-padding: 30px;
+$font-color: rgba(255,255,255,.8);
+
 #project-menu {
+  padding: $project-list-vertical-padding $project-list-horizontal-padding $project-list-vertical-padding $project-list-horizontal-padding;
+  color: $font-color;
+  h2 {
+    margin: 0;
+  }
   ul {
     margin: 0;
+    padding: 0;
+    list-style-type: none;
     li {
       &:hover {
         font-weight: bold;
       }
+      line-height: 30px;
     }
   }
 }
