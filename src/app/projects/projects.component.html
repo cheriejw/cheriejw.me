@@ -22,12 +22,4 @@
     <!-- Sub-menu Slide -->
     <app-selected-subscreen [(selectedItemID)]="selectedItemID" *ngIf="selectedItemID.length > 0" [onCloseSubScreen]="onCloseSubScreen"></app-selected-subscreen>    
   </div>
-  <div id="employers-logo-links">
-    <h4>EMPLOYERS</h4>
-    <div>
-      <a *ngFor="let employer of employersList" href="{{employer.employerLink}}">
-        <img src="{{employer.logoURL}}" alt="{{employer.employerName}}"/>
-      </a>
-    </div>
-  </div>
 </section>
